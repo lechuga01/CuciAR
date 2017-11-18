@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "705404954421",
+    "firebase_url": "https://arcloud-udg.firebaseio.com",
+    "project_id": "arcloud-udg",
+    "storage_bucket": "arcloud-udg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705404954421:android:fbd59f032bf450ec",
+        "android_client_info": {
+          "package_name": "com.razorblade.cuciar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "705404954421-7egb78jjhrdlcpth2e65ve1rlaulqt6g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJegjofofpUoOxCKOGnOMAScwm7R0c2Rw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
