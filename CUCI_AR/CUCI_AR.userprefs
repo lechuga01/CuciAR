@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{258C3A1F-74BC-230E-FDB4-AC9FBE9DB3CC}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/firebaseScripts/ObtenerEdificios.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Vuforia/Scripts/DefaultTrackableEventHandler.cs">
     <Files>
       <File FileName="Assets/Scripts/firebaseScripts/ObtenerEdificios.cs" Line="31" Column="38" />
       <File FileName="Assets/Scripts/firebaseScripts/Archivotxt.cs" Line="33" Column="41" />
       <File FileName="Assets/db.txt" Line="9" Column="2" />
+      <File FileName="Assets/Vuforia/Scripts/DefaultTrackableEventHandler.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

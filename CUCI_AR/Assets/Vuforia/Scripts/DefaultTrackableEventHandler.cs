@@ -23,7 +23,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     #region UNTIY_MONOBEHAVIOUR_METHODS
 
 
-    public GameObject boton1;
+    public GameObject boton1;//es el Canvas de la esena sin el no se mostrara la tarjeta
 
 
     protected virtual void Start()

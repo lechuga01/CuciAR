@@ -11,17 +11,15 @@ public class ObtenerEdificios : MonoBehaviour {
 	// Use this for initialization
     /**
      * obtencion de base de datos 
-     * 
-     * evaluacion de archivo txt existe:?aplicar informacion : descargar y crear archivo txt
-     * 
-     * 1-creacion archivo txt y escritura formato >|E|03|L|700|profesor|materia|*|800|profesor|materia|*....|M|700|profesor|materia|*|800|profesor|materia|*....|@|04......|salto de linea
->|C|..........'
-     * 2-llenado con base de datos 
      * 3- evaluacion de conexion a internet
+     * obtener referencias de hijos atraves del nombre del gameobject
     */
 	void Start () {
         Debug.Log(this.gameObject.name);//obtencion d nombre de gameobject asi otendremos el dato de que imagen es la vista
-
+        /**
+         * falta seccionar codigo para la obtencion de datos referenciales a salon y edifico 
+         * al igual que la hora fija del celular para mostrar 5 horas seguidas
+        */
         FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://arcloud-udg.firebaseio.com/");//conexion a base de datos
 
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;//referencia a la base
