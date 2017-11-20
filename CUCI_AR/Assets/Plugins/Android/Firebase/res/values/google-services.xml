@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="firebase_database_url" translatable="false">https://arcloud-udg.firebaseio.com</string>
+  <string name="gcm_defaultSenderId" translatable="false">705404954421</string>
+  <string name="google_storage_bucket" translatable="false">arcloud-udg.appspot.com</string>
+  <string name="project_id" translatable="false">arcloud-udg</string>
+  <string name="google_api_key" translatable="false">AIzaSyDJegjofofpUoOxCKOGnOMAScwm7R0c2Rw</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDJegjofofpUoOxCKOGnOMAScwm7R0c2Rw</string>
+  <string name="google_app_id" translatable="false">1:705404954421:android:fbd59f032bf450ec</string>
+  <string name="default_web_client_id" translatable="false">705404954421-7egb78jjhrdlcpth2e65ve1rlaulqt6g.apps.googleusercontent.com</string>
+</resources>

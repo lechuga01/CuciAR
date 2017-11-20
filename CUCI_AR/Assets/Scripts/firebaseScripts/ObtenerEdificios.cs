@@ -20,6 +20,11 @@ public class ObtenerEdificios : MonoBehaviour {
          * falta seccionar codigo para la obtencion de datos referenciales a salon y edifico 
          * al igual que la hora fija del celular para mostrar 5 horas seguidas
         */
+        string gnombre = this.gameObject.name;
+        string EdificioLetra = gnombre[0].ToString();
+        string salon = gnombre.Substring(1);//son string porque la referencia a firebase son cadenas
+        Debug.Log(EdificioLetra);
+        Debug.Log(salon);
         FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://arcloud-udg.firebaseio.com/");//conexion a base de datos
 
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;//referencia a la base
@@ -27,7 +32,7 @@ public class ObtenerEdificios : MonoBehaviour {
         Debug.Log("entro");
 
         FirebaseDatabase.DefaultInstance//creacion de instancia de obtencion de informacion referida a los hijos (llaves json)
-                        .GetReference("Edificio")//.Child("E")//.Child("03").Child("L")//dependiendo el nombre se creara un parse para obtener informacion especifica
+                        .GetReference("Edificio").Child(EdificioLetra).Child(salon).Child("L")//dependiendo el nombre se creara un parse para obtener informacion especifica
             .ValueChanged += HandleValueChanged;
 
     }
@@ -40,7 +45,7 @@ public class ObtenerEdificios : MonoBehaviour {
             return;
         }
         // Do something with the data in args.Snapshot
-        Debug.Log(args.Snapshot.GetRawJsonValue());
+        //Debug.Log(args.Snapshot.GetRawJsonValue());
         // WriteString(args.Snapshot.GetRawJsonValue());
 
        // Debug.Log(args.Snapshot.Value);
@@ -76,7 +81,8 @@ public class ObtenerEdificios : MonoBehaviour {
 
     }
 }
-class materias//E0101
+
+class materias
 {
     int hora;
     string materia, profesor;

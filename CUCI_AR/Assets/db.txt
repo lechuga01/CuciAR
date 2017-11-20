@@ -1,8 +1,0 @@
-﻿{"C":{"07":{"L":{"materia":"bigdata","profesor":"mart"}}},"E":{"03":{"I":{"700":{"materia":"asdfasdf","profesor":"asdfasdf"},"800":{"materia":"vac\u00edo","profesor":"vac\u00edo"}},"L":{"700":{"materia":"asdfasdf","profesor":"asdfasdf"}},"M":{"700":{"materia":"asfasdf","profesor":"asdfasdfasd"}}},"04":{"L":{"700":{"materia":"algo","profesor":"avi"}}}}}
-cada }}, siempre termina con la coma y ese es un objeto {"I":{"700":{"materia":"asdfasdf","profesor":"asdfasdf"}}, de un dia este puede tener {"I":{"700":{"materia":"asdfasdf","profesor":"asdfasdf"},"800":{"materia":"vac\u00edo","profesor":"vac\u00edo"}}, y siempre terminar con }},
-
- siempre despues de }}}, sige el sigiente salon  o el siguiente edificio si no es numero sera letra de edificio
- y tendria que buscar atraves de Letra de aula y digito 
-
- tendre que evaluar si despues de 3} y la coma el contenido es mayor a 1 caracter si es asi es un aula si no es asi es un edificio
-
