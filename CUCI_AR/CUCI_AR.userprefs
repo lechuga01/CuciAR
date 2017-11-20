@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{258C3A1F-74BC-230E-FDB4-AC9FBE9DB3CC}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/firebaseScripts/ObtenerEdificios.cs">
     <Files>
-      <File FileName="Assets/Scripts/firebaseScripts/ObtenerEdificios.cs" Line="84" Column="1" />
+      <File FileName="Assets/Scripts/firebaseScripts/ObtenerEdificios.cs" Line="67" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
