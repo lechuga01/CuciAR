@@ -5,16 +5,27 @@ using Firebase;
 using Firebase.Unity.Editor;
 using Firebase.Database;
 using System.IO;
+using UnityEngine.UI;
+using System;
 
 public class ObtenerEdificios : MonoBehaviour {
 
-	// Use this for initialization
+    // Use this for initialization
     /**
      * obtencion de base de datos 
      * 3- evaluacion de conexion a internet
      * obtener referencias de hijos atraves del nombre del gameobject
     */
+    Text Aula,Clases;
 	void Start () {
+        DateTime date = DateTime.Now;//obtiene la fecha y hora
+        string datos = date.Date.ToString();
+
+        //Debug.Log("date: " + date);//date: 11/20/2017 11:24:40
+        //Debug.Log("date: " + date.ToString("ddd"));// lansa el dia en ingles
+        Debug.Log("date: " + date.Hour);//date: nos da unicamente la hora sin minutos
+        Debug.Log("date: " + date.DayOfWeek);//date: lansa dia tambien en ingles en texto
+        Debug.Log("date: " + (int) date.DayOfWeek);//date: nos lanza el dia en digito lunes 1 martes 2 miercoles 3...
         Debug.Log(this.gameObject.name);//obtencion d nombre de gameobject asi otendremos el dato de que imagen es la vista
         /**
          * falta seccionar codigo para la obtencion de datos referenciales a salon y edifico 
