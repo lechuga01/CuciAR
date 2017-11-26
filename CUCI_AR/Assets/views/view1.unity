@@ -432,7 +432,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 13b7f0c005a643d4aebc734a9df3994a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6bc71f89acf64ba4af63fb69759c8dd3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -669,8 +669,9 @@ GameObject:
   - component: {fileID: 689148024}
   - component: {fileID: 689148023}
   - component: {fileID: 689148022}
+  - component: {fileID: 689148025}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BtnDetalles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -733,7 +734,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 689148023}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 689148025}
+        m_MethodName: CambioVistas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &689148023
@@ -769,6 +781,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 689148020}
+--- !u!114 &689148025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 689148020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1446e741e18543a1ba8eecd61f806d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!21 &783183833
 Material:
   serializedVersion: 6
@@ -788,7 +811,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 13b7f0c005a643d4aebc734a9df3994a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6bc71f89acf64ba4af63fb69759c8dd3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -927,7 +950,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: imagearMaterial
+  m_Name: E0001Material
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -940,7 +963,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 0d4fd32d6abe47109048b30b87ec02e8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 374d165acf934a90bd2db5c3961f1e98, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []

@@ -4,33 +4,38 @@ using UnityEngine;
 
 public class ActivadorBotonVista : MonoBehaviour {
 
-	public GameObject VistaNormal;
-	public GameObject VistaDetallada;
-	private bool cambio=false;
-
-	void Start () {
-		VistaNormal.SetActive(true);
-		VistaDetallada.SetActive(false);
-		cambio=true;
-	}
 	
-	void Update () {
-		if(cambio == true) {
-			VistaDetallada.SetActive(false);
-			VistaNormal.SetActive(true);
-			
-		} else {
-			VistaNormal.SetActive(false);
-			VistaDetallada.SetActive(true);
-		}
-	}
+	 bool cambio=true;
+     GameObject vistaNormal=null;
+     GameObject vistaDetallada=null;
+   
+    public void setVistas(GameObject vistaN, GameObject vistaD){
+        this.vistaNormal = vistaN;
+        this.vistaDetallada = vistaD;
+    }
 
-	public void CambioTextos(){
+    private void Update()
+    {
+        if (cambio == true)
+        {
+            vistaDetallada.SetActive(false);
+            vistaNormal.SetActive(true);
+
+        }
+        else
+        {
+            vistaNormal.SetActive(false);
+            vistaDetallada.SetActive(true);
+        }
+    }
+    public void CambioVistas(){
 		if (cambio == false) {
 			cambio = true;
+
 		} else if (cambio == true) {
 			cambio = false;
 		}
 
 	}
+
 }

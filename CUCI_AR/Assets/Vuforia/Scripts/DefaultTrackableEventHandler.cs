@@ -24,14 +24,17 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
 
     public GameObject boton1;//es el Canvas de la esena sin el no se mostrara la tarjeta
-
-
+    public bool cambio = true;
+    GameObject x;
     protected virtual void Start()
     {
+        x = boton1.transform.Find("BtnDetalles").gameObject;//obtienes el hijo del canvaz que tiene el nombre designado
+           
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
     }
+   
 
     #endregion // UNTIY_MONOBEHAVIOUR_METHODS
 
@@ -76,10 +79,13 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
-        boton1.SetActive(true);
+        boton1.SetActive(true);//activa la visualizacion del canvas
         // Enable rendering:
         foreach (var component in rendererComponents)
+        {
             component.enabled = true;
+
+        }
 
         // Enable colliders:
         foreach (var component in colliderComponents)
@@ -90,13 +96,24 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
             component.enabled = true;
 
 
-            Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+        Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");//devemos poner en el archivo la gerarquia de nombres cuando se suba a vuforia para su obtencion
         //se va a modificar par ahacer un filtro dependiendo de el objeto trckable que obtengamos para poder asi hacer un filtro y desplegar o eliminar botones en pantalla
         //hace que el boton se aparesca al ser vista la acarta con el nombre del objeto
+        GameObject vista = GameObject.Find(mTrackableBehaviour.TrackableName);
 
-        GameObject x = boton1.transform.Find("Button").gameObject;//obtienes el hijo del canvaz que tiene el nombre designado
-        x.SetActive(true);//activa la visibilidad del boton en pantalla
-                          //Directamente activa el canvas de la imagen activa que se le a otorgado
+        if (vista.CompareTag("Aula"))//Las aulas llevan su tag de Aula
+        {
+            Debug.Log("-----------"+vista.tag);
+            x.SetActive(true);//activa la visibilidad del boton en pantalla
+                              //Directamente activa el canvas de la imagen activa que se le a otorgado
+           // cambio = x.GetComponent<ActivadorBotonVista>().getCambio();
+            Debug.Log(cambio);
+            GameObject vistaNormal = vista.transform.Find("Plano").gameObject;
+            GameObject vistaDetallada = vista.transform.Find("Detalles").gameObject;
+            x.GetComponent<ActivadorBotonVista>().setVistas(vistaNormal,vistaDetallada);//se envian los gameObject de las vistas al boton para poderse interactuar
+                
+
+        }
     }
 
 
@@ -122,9 +139,9 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
 
             boton1.SetActive (false);//desactiva el canvas que tiene toda la interfaz grafica
-            //print(this.gameObject.tag);//lo manejaremos las base de datos e informacion que aparece atraves de Tags
             
     }
+   
 
     #endregion // PRIVATE_METHODS
 }
