@@ -16,7 +16,7 @@ public class ObtenerEdificios : MonoBehaviour {
      * 3- evaluacion de conexion a internet
      * obtener referencias de hijos atraves del nombre del gameobject
     */
-    TextMesh Aula, Hora, Materia, Profesor;
+    TextMesh Aula, Hora, Materia, Profesor, MateriaD, ProfesorD, DescripcionM;
     string datos;
     string EdificioLetra;
     string salon;
@@ -29,6 +29,13 @@ public class ObtenerEdificios : MonoBehaviour {
         Hora = GameObject.Find("/" + gnombre + "/Plano/Hora").GetComponent<TextMesh>();
         Materia = GameObject.Find("/"+gnombre + "/Plano/Materias").GetComponent<TextMesh>();
         Profesor = GameObject.Find("/" + gnombre + "/Plano/Profesor").GetComponent<TextMesh>();
+
+
+        //Obtencion textmesh de vista Detalles
+        ProfesorD = GameObject.Find("/" + gnombre + "/Detalles/Profesor").GetComponent<TextMesh>();
+        MateriaD = GameObject.Find("/" + gnombre + "/Detalles/Materias").GetComponent<TextMesh>();
+        DescripcionM = GameObject.Find("/" + gnombre + "/Detalles/Descripcion").GetComponent<TextMesh>();
+
 
         DateTime date = DateTime.Now;//obtiene la fecha y hora
         datos = date.Date.ToString();
@@ -80,7 +87,9 @@ public class ObtenerEdificios : MonoBehaviour {
         //Debug.Log("entro");
 
         FirebaseDatabase.DefaultInstance//creacion de instancia de obtencion de informacion referida a los hijos (llaves json)
-                        .GetReference("Edificio").Child(EdificioLetra).Child(salon).Child("L")//dependiendo el nombre se creara un parse para obtener informacion especifica
+                        .GetReference("Edificio").Child(EdificioLetra).Child(salon)
+                        //.Child(diaS)// es el dia actual 
+                        .Child("L")//dependiendo el nombre se creara un parse para obtener informacion especifica
             .ValueChanged += HandleValueChanged;
 
     }
@@ -117,6 +126,12 @@ public class ObtenerEdificios : MonoBehaviour {
             J = i + 600;
             valor = 6;
         }
+
+        DescripcionM.text = args.Snapshot.Child("" + i).Child("description").Value.ToString();//asigna texto de descripcion de la hora actual
+        ProfesorD.text = args.Snapshot.Child("" + i).Child("profesor").Value.ToString();
+        MateriaD.text = args.Snapshot.Child("" + i).Child("materia").Value.ToString();
+
+
         materias[] m = new materias[valor];
         while(i != J && i>=700 && i<=2000){//deve evaluar al mismo tiempo si i sea limite a 2000 y i mayor a 700  
             //if(){} si la i es igual a 2000 solamente mostrar 1 ves en lugar de +400 y asi desde 4 horas antes reducir 100 a la muestra 
@@ -125,7 +140,7 @@ public class ObtenerEdificios : MonoBehaviour {
             //unicamente obtendra un Objeto con materia y con profesor
             m[x] =new materias(i,args.Snapshot.Child("" + i).Child("materia").Value.ToString(),args.Snapshot.Child("" + i).Child("profesor").Value.ToString());
             //colocar y crear una cadena con saltos de linea de cada seccion concatenada 
-            _profesor = _profesor+ m[x].getprofesor() + "\n\n";
+             _profesor = _profesor+ m[x].getprofesor() + "\n\n";
             _materia = _materia + m[x].getmateria()+"\n\n";
             _hora = _hora + m[x].gethora()+ "\n";
 
@@ -147,6 +162,7 @@ public class ObtenerEdificios : MonoBehaviour {
         Materia.text = _materia;
         Hora.text = _hora;
         Profesor.text = _profesor;
+           
         /**
          *Falta seccionar y obtener de la hora actual a 4 mas de adelante solamente
          *
@@ -165,6 +181,7 @@ class materias
         this.hora = hora;
         this.materia = materia;
         this.profesor = profesor;
+        this.descripcion = descripcion;
     }
     public int gethora()
     {
@@ -177,4 +194,5 @@ class materias
     {
         return this.profesor;
     }
+   
 }
