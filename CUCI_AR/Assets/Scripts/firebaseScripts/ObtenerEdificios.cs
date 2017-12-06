@@ -88,8 +88,8 @@ public class ObtenerEdificios : MonoBehaviour {
 
         FirebaseDatabase.DefaultInstance//creacion de instancia de obtencion de informacion referida a los hijos (llaves json)
                         .GetReference("Edificio").Child(EdificioLetra).Child(salon)
-                        //.Child(diaS)// es el dia actual 
-                        .Child("L")//dependiendo el nombre se creara un parse para obtener informacion especifica
+                        .Child(diaS)// es el dia actual 
+                        //.Child("L")//dependiendo el nombre se creara un parse para obtener informacion especifica
             .ValueChanged += HandleValueChanged;
 
     }
@@ -181,7 +181,6 @@ class materias
         this.hora = hora;
         this.materia = materia;
         this.profesor = profesor;
-        this.descripcion = descripcion;
     }
     public int gethora()
     {
