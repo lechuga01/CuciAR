@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{258C3A1F-74BC-230E-FDB4-AC9FBE9DB3CC}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/firebaseScripts/ObtenerEdificios.cs">
     <Files>
-      <File FileName="Assets/Scripts/firebaseScripts/ObtenerEdificios.cs" Line="92" Column="27" />
+      <File FileName="Assets/Scripts/firebaseScripts/ObtenerEdificios.cs" Line="148" Column="9" />
       <File FileName="Assets/Vuforia/Scripts/DefaultTrackableEventHandler.cs" Line="104" Column="71" />
       <File FileName="Assets/Scripts/ActivadorBotonVista.cs" Line="8" Column="2" />
     </Files>

@@ -274,7 +274,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ActivadorBotonVista.cs" />
-    <Compile Include="Assets\Scripts\firebaseScripts\Archivotxt.cs" />
     <Compile Include="Assets\Scripts\firebaseScripts\ObtenerEdificios.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultSmartTerrainEventHandler.cs" />
@@ -293,7 +292,6 @@
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-app-unity\maven-metadata.xml" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-auth-unity\maven-metadata.xml" />
     <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.59.0.txt" />
-    <None Include="Assets\Plugins\Android\Firebase\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\Firebase\res\values\google-services.xml" />
     <None Include="Assets\StreamingAssets\Vuforia\UDG_Proto1.xml" />
     <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_Images.xml" />

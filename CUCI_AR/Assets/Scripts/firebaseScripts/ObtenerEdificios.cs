@@ -22,20 +22,29 @@ public class ObtenerEdificios : MonoBehaviour {
     string salon;
     string horaActual;
 	void Start () {
+
+       
+
         int dia;
         string gnombre = this.gameObject.name;
+        Debug.Log((gnombre));
         Aula = GameObject.Find("/"+gnombre + "/Plano/Aula").GetComponent<TextMesh>();//metodo de busqueda del hijo por su nombre en el nombre del gameObject
-        Aula.text =gnombre;//se coloca el nombre a aula
+        Aula.text = gnombre;//se coloca el nombre a aula
         Hora = GameObject.Find("/" + gnombre + "/Plano/Hora").GetComponent<TextMesh>();
         Materia = GameObject.Find("/"+gnombre + "/Plano/Materias").GetComponent<TextMesh>();
         Profesor = GameObject.Find("/" + gnombre + "/Plano/Profesor").GetComponent<TextMesh>();
 
-
+        //Debug.Log(gnombre);
         //Obtencion textmesh de vista Detalles
         ProfesorD = GameObject.Find("/" + gnombre + "/Detalles/Profesor").GetComponent<TextMesh>();
         MateriaD = GameObject.Find("/" + gnombre + "/Detalles/Materias").GetComponent<TextMesh>();
         DescripcionM = GameObject.Find("/" + gnombre + "/Detalles/Descripcion").GetComponent<TextMesh>();
 
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            Debug.Log("Error. Check internet connection!");
+            Materia.text = "Error. Check internet connection!";
+        }
 
         DateTime date = DateTime.Now;//obtiene la fecha y hora
         datos = date.Date.ToString();
